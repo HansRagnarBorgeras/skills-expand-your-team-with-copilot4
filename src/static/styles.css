@@ -617,6 +617,8 @@ footer {
   position: absolute;
   top: 10px;
   right: 15px;
+  display: flex;
+  align-items: center;
 }
 
 #user-status {
@@ -663,4 +665,72 @@ footer {
 
 #logout-button:hover {
   background-color: rgba(255, 255, 255, 0.3);
+}
+
+/* Dark mode toggle button */
+#dark-mode-toggle {
+  background-color: rgba(255, 255, 255, 0.2);
+  border-radius: 20px;
+  padding: 4px 10px;
+  font-size: 1rem;
+  line-height: 1;
+  margin-right: 8px;
+}
+
+#dark-mode-toggle:hover {
+  background-color: rgba(255, 255, 255, 0.3);
+}
+
+/* Smooth color transitions for dark mode */
+body,
+header,
+main,
+footer,
+section,
+aside,
+.activity-card,
+.sidebar-filters,
+.modal-content,
+.search-box input,
+.category-filter,
+.day-filter,
+.time-filter,
+.no-results,
+.filter-label {
+  transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+}
+
+/* Dark mode color overrides */
+body.dark-mode {
+  --background: #121212;
+  --surface: #1e1e1e;
+  --text-primary: #e0e0e0;
+  --text-secondary: #9e9e9e;
+  --border: #3a3a3a;
+  --border-light: #2a2a2a;
+  --border-focus: #555555;
+  --success-light: #1a3a1a;
+  --warning-light: #3a2800;
+  --error-light: #3a0a0a;
+  --info-light: #003340;
+}
+
+body.dark-mode .search-box input {
+  background-color: var(--surface);
+  color: var(--text-primary);
+}
+
+body.dark-mode .modal-content {
+  background-color: var(--surface);
+  color: var(--text-primary);
+}
+
+body.dark-mode .modal-content input {
+  background-color: #2a2a2a;
+  color: var(--text-primary);
+  border-color: var(--border);
+}
+
+body.dark-mode .modal-content label {
+  color: var(--text-primary);
 }
